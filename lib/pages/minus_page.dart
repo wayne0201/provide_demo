@@ -6,6 +6,9 @@ class MinusPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('页面二'),
+      ),
       body: Center(
         child: Column(
           children: <Widget>[
@@ -26,7 +29,7 @@ class Number extends StatelessWidget {
       child: Provide<Counter>(
         builder: (context, child, counter) {
           return Text(
-            '${counter.value}',
+            'count：${counter.value}',
             style: Theme.of(context).textTheme.display1,
           );
         },

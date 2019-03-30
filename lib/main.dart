@@ -22,9 +22,6 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'provide demo',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primaryColor: Colors.pink,
-        ),
         home: IndexPage(),
       ),
     );

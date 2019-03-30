@@ -38,7 +38,6 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: currentIndex,
@@ -51,6 +50,7 @@ class _IndexPageState extends State<IndexPage> {
           },
         ),
         body: IndexedStack(
+          
           index: currentIndex,
           children: tabBodies,
         ),
