@@ -4,7 +4,7 @@ import './provide/counter.dart';
 import './pages/index_page.dart';
 
 void main() {
-  var counter = Counter();
+  var counter = Counter(0);
   var providers = Providers();
   providers..provide(Provider<Counter>.value(counter));
 

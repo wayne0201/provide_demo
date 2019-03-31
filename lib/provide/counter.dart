@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
 class Counter with ChangeNotifier{
-  int value = 0;
+  int _value;
+  /* value 只读，只能通过暴露的方法改变 */
+  int get value => _value;
+
+  Counter(this._value);
 
   add() {
-    value ++;
+    _value ++;
     notifyListeners();
   }
 
   minus() {
-    value --;
+    _value --;
     notifyListeners();
   }
 
