@@ -26,6 +26,7 @@ class Number extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 200),
+      /* 动态监听 Counter 内的 value, 需要用 Provide Widget 包裹起来，然后利用 builder 函数返回子节点 */
       child: Provide<Counter>(
         builder: (context, child, counter) {
           return Text(
@@ -46,6 +47,7 @@ class MyButton extends StatelessWidget {
       margin: EdgeInsets.only(top: 80),
       child: RaisedButton(
         onPressed: () {
+          /* 触发 Counter 类的 add 方法 */
           Provide.value<Counter>(context).add();
         },
         child: Text("加一"),

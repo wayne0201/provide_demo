@@ -10,6 +10,7 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
+  
   final List<BottomNavigationBarItem> bottomTabs = [
     BottomNavigationBarItem(
       icon: Icon(CupertinoIcons.add_circled),
@@ -20,6 +21,7 @@ class _IndexPageState extends State<IndexPage> {
       title: Text('减'),
     ),
   ];
+
 
   final List<Widget> tabBodies = [
     AddPage(),
@@ -38,19 +40,23 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
+        
+        /* Tab */
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: currentIndex,
           items: bottomTabs,
           onTap: (index) {
             setState(() {
+              /* 修改当前的页面索引，切换当前页 */
               currentIndex = index;
               currentPage = tabBodies[currentIndex];
             });
           },
         ),
+
+        /* Page */
         body: IndexedStack(
-          
           index: currentIndex,
           children: tabBodies,
         ),
