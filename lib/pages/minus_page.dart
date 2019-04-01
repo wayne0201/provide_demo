@@ -27,20 +27,22 @@ class Number extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: 200),
       /* 动态监听 Counter 内的 value, 需要用 Provide Widget 包裹起来，然后利用 builder 函数返回子节点 */
-      child: Provide< Counter>(
-        builder: (context, child, counter) {
-          return Text(
-            'count：${counter.value}',
-            style: Theme.of(context).textTheme.display1,
-          );
-        },
+      child: Provide<Counter>(
+        builder: (
+          context,
+          child,
+          counter,
+        ) =>
+            Text(
+              'count：${counter.value}',
+              style: Theme.of(context).textTheme.display1,
+            ),
       ),
     );
   }
 }
 
 class MyButton extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(
