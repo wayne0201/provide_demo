@@ -29,10 +29,8 @@ class _IndexPageState extends State<IndexPage> {
   ];
 
   int currentIndex = 0;
-  var currentPage;
 
   void initState() {
-    currentPage = tabBodies[currentIndex];
     super.initState();
   }
 
@@ -50,7 +48,6 @@ class _IndexPageState extends State<IndexPage> {
             setState(() {
               /* 修改当前的页面索引，切换当前页 */
               currentIndex = index;
-              currentPage = tabBodies[currentIndex];
             });
           },
         ),
